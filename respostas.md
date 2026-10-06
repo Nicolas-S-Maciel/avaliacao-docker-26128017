@@ -21,20 +21,21 @@ R: Foi utilizada a instrução COPY ./html/ /usr/share/nginx/html/ para copiar o
 ## Parte 2 · Docker Hub
 
 3. Nome completo da imagem publicada e link público do repositório no Docker Hub.
+R: * **Nome completo da imagem:** `ghcr.io/nicolas-s-maciel/agrovale-portal:1.0-26128017` ou `nikottrw/agrovale-portal:1.0-26128017` no Docker Hub
+* **Link público do repositório:** `https://github.com/Nicolas-S-Maciel/agrovale-portal/pkgs/container/agrovale-portal` ou `https://hub.docker.com/r/nikottrw/agrovale-portal` no Docker hub
 
 4. Por que o `docker login` foi feito com um token de acesso e não com a senha da conta?
+R: Foi feito assim por questão de segurança, e para oferecer suporte a 2FA que sria a autenticação
 
 ## Parte 3 · Página de manutenção
 
 5. Preencha uma linha por defeito encontrado. Defeito inexistente listado aqui desconta pontos.
-
-| # | Instrução | O que estava errado | O que você viu acontecer | Como corrigiu |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+R: Nenhum defeito foi encontrado
 
 6. Qual a diferença entre `-p 7042:80` e `-p 80:7042` no `docker run`? Qual dos dois números é a porta do container?
+R: -p 7042:80: Mapeia a porta 7042 do computador (host) para a porta 80 do container.
+-p 80:7042: Mapeia a porta 80 do computador (host) para a porta 7042 do container.
+O segundo número é a porta interna do container.
 
 ## Parte 4 · docker-compose.yml
 
