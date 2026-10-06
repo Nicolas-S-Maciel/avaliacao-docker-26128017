@@ -47,11 +47,8 @@ R: A porta 3306 não é publicada por segurança, evitando expor o banco de dado
 
 ## Parte 5 · Persistência
 
-9. Quais comandos você usou para derrubar e subir a stack? Qual comando teria apagado o post que você criou,
-   e por quê?
+9. Quais comandos você usou para derrubar e subir a stack? Qual comando teria apagado o post que você criou, e por quê?
+R: Para subir e derrubar a stack, utilizei os comandos docker compose down para interromper os serviços e docker compose up -d para subi-los em segundo plano. O comando que teria apagado o post criado é o docker compose down -v (ou a remoção direta com docker volume rm db_data blog_data), pois o parâmetro -v remove os volumes nomeados onde os dados do MySQL e do WordPress ficam salvos de forma persistente.
 
-10. Código de conclusão impresso pelo verificador:
+10. Código de conclusão impresso pelo verificador: AGROVALE-26128017-2B131767
 
-```
-(cole aqui)
-```
