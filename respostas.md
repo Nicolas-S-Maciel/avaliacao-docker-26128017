@@ -1,9 +1,9 @@
 # Respostas · Avaliação Prática de Docker · Cooperativa AgroVale (Turma A)
 
-Nome:
-Matrícula:
-Usuário do GitHub:
-Usuário do Docker Hub:
+Nome: Nícolas Silva Maciel
+Matrícula: 26128017
+Usuário do GitHub: Nicolas-S-Maciel
+Usuário do Docker Hub: nikottrw
 
 Responda com as suas palavras e com o que aconteceu na SUA máquina. Resposta curta e certa vale mais
 do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile ou compose vale zero.
@@ -11,9 +11,12 @@ do que texto longo copiado. Resposta que contradiz o seu próprio Dockerfile ou 
 ## Parte 1 · Dockerfile do portal
 
 1. Qual imagem base você usou e qual o tamanho final da imagem do portal (saída de `docker images`)?
+R: Foi utilizada a imagem base oficial do Nginx com a tag fixa alpine (nginx:alpine).
 
-2. Em qual pasta do container o Nginx procura os arquivos do site? Mostre o comando que você usou para
-   conferir que o `index.html` está lá dentro.
+
+2. Em qual pasta do container o Nginx procura os arquivos do site? Mostre o comando que você usou para conferir que o `index.html` está lá dentro.
+R: Foi utilizada a instrução COPY ./html/ /usr/share/nginx/html/ para copiar o conteúdo do diretório portal/html/ para o diretório padrão onde o Nginx serve os arquivos estáticos na imagem.
+
 
 ## Parte 2 · Docker Hub
 
