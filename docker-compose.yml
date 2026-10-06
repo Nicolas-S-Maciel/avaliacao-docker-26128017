@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  portal:
+    build: ./portal
+    container_name: agrovale-portal
+    expose:
+      - "80"
+    networks:
+      - agrovale-net
+
+  manutencao:
+    build: ./manutencao
+    container_name: agrovale-manutencao
+    expose:
+      - "80"
+    networks:
+      - agrovale-net
+
+  proxy:
+    build: ./proxy
+    container_name: agrovale-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - portal
+      - manutencao
+    networks:
+      - agrovale-net
+
+networks:
+  agrovale-net:
+    driver: bridge
