@@ -40,9 +40,10 @@ O segundo número é a porta interna do container.
 ## Parte 4 · docker-compose.yml
 
 7. No serviço `blog`, por que `WORDPRESS_DB_HOST` recebe `db` e não `localhost`?
+R: O WORDPRESS_DB_HOST recebe db porque no Docker Compose cada container é uma máquina isolada onde localhost se refere a ele mesmo, enquanto o nome db é resolvido pelo DNS interno do Docker para o IP do container do banco de dados na rede compartilhada.
 
-8. Por que o serviço `db` não publica a porta 3306? Se precisar consultar o banco, como faz sem publicar
-   a porta? Mostre o comando.
+8. Por que o serviço `db` não publica a porta 3306? Se precisar consultar o banco, como faz sem publicar a porta? Mostre o comando.
+R: A porta 3306 não é publicada por segurança, evitando expor o banco de dados diretamente à rede externa enquanto o container do blog continua acessando-o internamente. Para consultar o banco sem publicar a porta, basta acessar o cliente MySQL diretamente no container com o comando docker exec -it agrovale-db mysql -u root -p.
 
 ## Parte 5 · Persistência
 
